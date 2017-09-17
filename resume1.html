@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<style id="jsbin-css">
+* {
+  margin: 0;
+  padding: 0;
+}
+.layout {
+  width: 900px;
+  margin: 10px auto;
+  box-shadow:0 4px 60px rgba(0,0,0,.6),0 15px 20px rgba(0,0,0,.3);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.namelogo{  /* 对齐 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 60px;
+}
+.logo {
+  padding: 40px;
+  border-radius: 50%;
+  background: #000;
+  margin-right: 40px;
+}
+.logo p {  /* 按80来算的 */
+  width: 70px;
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+  font-size: 28px;
+  padding: 0 5px;
+}
+.logo p:last-child {
+  text-align: right;
+}
+.logo:after {
+  content: '';
+  display: block;
+  border: 1px solid #fff;
+  transform : translate(0, -40px) rotate(135deg);
+}
+
+.name p {
+}
+.name p:first-child {
+  font-size: 38px;
+  font-weight:lighter;
+}
+.name p:last-child {
+  font-size:14px;
+  font-weight: bolder;
+}
+
+.contact {
+  width: 300px;
+  padding: 80px 0;
+}
+.contact h3 {
+  border-bottom: 3px solid;
+}
+.contact p {
+  margin: 8px 0;
+}
+.contact b {
+  margin-right: 24px;
+}
+
+.block-wrap{
+  margin: 0 60px;
+  
+}
+.block-title {
+  width: 50%;
+  padding: 10px 0;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #ccc;
+}
+.text-block{
+  position: relative;
+  padding-left: 60px;
+}
+.m-title {
+  margin: 15px 0;
+  font-size:22px;
+  position: relative;
+}
+
+.m-time {
+  color: #ccc;
+}
+.m-text {
+  line-height:1.5;
+}
+
+.m-title:before {    /* 往上数3段，黑点对齐也是够坑 父容器不用relative算不准 */
+  content: '';
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 7px;
+  left: -57px;
+  background: #000;
+  border-radius: 50%;
+}
+.text-block:after {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 100%;
+  background: #000;
+  position: absolute;
+  top: 23px;
+  left: 10px;
+}
+.text-block:last-child {  /* 清除textarea的浮动避免塌陷 */
+  overflow: hidden;
+}
+
+footer {
+  margin: 60px 60px 20px 60px;
+  padding-bottom: 60px;
+  display: flex;
+  justify-content:space-between;
+}
+footer h2 {
+  line-height: 1.5;
+  border-bottom: 1px solid #ccc;
+}
+.left,
+.right {
+  font-size: 14px;
+  width: 46%;
+}
+.l-title {
+  font-size:16px;
+  line-height:1.5;
+  margin:20px 0;
+}
+.l-content {
+  margin-left: 60px;
+  line-height: 1.5;
+}
+
+.r-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+.r-wrap p{
+  margin: 20px 0;
+  font-weight: bold;
+  width: 32%;
+}
+
+.add {
+  padding-left:60px;
+  position:relative;
+}
+.add:before {
+  content: '+';
+  display:block;
+  text-align: center;
+  vertical-align: middle;
+  position:absolute;
+  top:0;
+  left:5px;
+  width:20px;
+  height:20px;
+  border:1px solid;
+  text-align:center;
+  line-height:20px;
+  border-radius:50%;
+}
+</style>
+
+<head>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+</head>
+<body>
+<div class="layout">
+  <header>
+    <div class="namelogo">
+      <div class="logo">
+        <p>D</p>
+        <p>S</p>
+      </div>
+      <div class="name">
+        <p>David Smith</p>
+        <p>Graphic & Web Designer</p>
+      </div>
+    </div>
+    <div class="contact">
+      <h3>CONTACT</h3>
+      <P><B>A</B>  59 Somewhere Street,NY,USA</P>
+      <P><B>E</B>  12 395 394 3048</P>
+      <P><B>M</B>  steve@gmail.com</P>
+      <P><B>B</B>  www.behance.net/design</P>
+    </div>
+  </header>
+  <div class="block-wrap">
+    <h2 class= "block-title">WORK EXPERICENCE</h2>
+    <div class="text-block">
+      <p class="m-title">Marketplaces/<span class="m-time">2012-2013</span></p>
+      <p class='m-text'>Name liber tempor soluta nobis eleifend option congue nihil imperdiet doimg id quod mazim placerat facer possim assum .Name liber tempor soluta nobis eleifend option congue nihil imperdiet doimg id quod mazim placerat facer possim assum.</p>
+      </div>
+    <div class="text-block">
+      <p class='m-title'>Apple Inc./<span class="m-time">2013-2014</span></p>
+      <p class='m-text'>Name liber tempor soluta nobis eleifend option congue nihil imperdiet doimg id quod mazim placerat facer possim assum .Name liber tempor soluta nobis eleifend option congue nihil imperdiet doimg id quod mazim placerat facer possim assum.</p>
+      </div>
+    <div class="text-block">
+      <p class='m-title'>Arom Bar Network/<span class="m-time">2014-Now</span></p>
+      <p class='m-text'>Name liber tempor soluta nobis eleifend option congue nihil imperdiet doimg id quod mazim placerat facer possim assum .Name liber tempor soluta nobis eleifend option congue nihil imperdiet doimg id quod mazim placerat facer possim assum.</p>
+    </div>
+  </div>
+  <div class="block-wrap">
+    <h2 class= "block-title">EDUCATION</h2>
+    <div class="text-block">
+      <p class="m-title">Collage/<span class="m-time">2008-2011</span></p>
+      <p class='m-text'>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molesite consequat,veil illum dolore eu feugiat nulla,Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molesite consequat,veil illum dolore eu feugiat nulla
+</p>
+     </div>
+     <div class="text-block">
+      <p class='m-title'>University/<span class="m-time">2011-2014</span></p>
+      <p class='m-text'>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molesite consequat,veil illum dolore eu feugiat nulla,Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molesite consequat,veil illum dolore eu feugiat nulla
+</p>
+    </div>
+  </div>
+  
+  <footer>
+    <div class="left">
+      <h2>EXTRA CURRICULAR ACTIVITIES</h2>
+      <p class="l-title add">Volunteer</p>
+      <p class="l-content">Claritas est etiam processus dynamicus,qui sequitur mutationem consuetudium lectorum.</p>
+      <p class="l-title add">Volunteer</p>
+      <p class="l-content">Claritas est etiam processus dynamicus,qui sequitur mutationem consuetudium lectorum.</p>
+    </div>
+    <div class="right">
+      <h2>PROFESIONAL SKILLS</h2>
+      <div class="r-wrap">
+          <p class="add">HTML & CSS</p>
+          <p class="add">JQUERY</p>
+          <p class="add">JAVASCRIPT</p>
+          <p class="add">PHOTOSHOP</p>
+          <p class="add">SLIM</p>
+          <p class="add">ILLUSTRATOR</p>
+      </div>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
